@@ -1,4 +1,4 @@
-package com.greenfoxacademy.finalexamendpoint;
+package com.greenfoxacademy.finalexamendpoint.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -18,6 +18,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/download")
 public class DownloadFileRestController {
+
   @Autowired
   ServletContext context;
 
@@ -36,7 +37,7 @@ public class DownloadFileRestController {
     headers.add("Expires", "0");
 
     headers.setContentLength(pdfFile.contentLength());
-    ResponseEntity<InputStreamResource> response = new ResponseEntity<InputStreamResource>(
+    ResponseEntity<InputStreamResource> response = new ResponseEntity<>(
             new InputStreamResource(pdfFile.getInputStream()), headers, HttpStatus.OK);
     return response;
   }

@@ -40,5 +40,5 @@ public class DownloadFileRestController {
             new InputStreamResource(pdfFile.getInputStream()), headers, HttpStatus.OK);
     return response;
   }
-  
+
 }

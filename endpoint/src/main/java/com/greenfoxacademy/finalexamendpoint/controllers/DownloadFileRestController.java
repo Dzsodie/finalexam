@@ -55,7 +55,7 @@ public class DownloadFileRestController {
     return "deleted: " + id;
   }
 
-  @RequestMapping(value = "/add", method = RequestMethod.PUT)      // save one object sent in JSON
+  @RequestMapping(value = "/add", method = RequestMethod.PUT)      // update one object sent in JSON
   @ResponseBody
   public String addNewJsonObject(@ModelAttribute Exercise exercise) {
     exerciseService.save(exercise);

@@ -20,7 +20,7 @@
 If you want to identify a resource, you should use Path Variable. 
 But if you want to sort or filter items, then you should use query parameter.
 
-/users?occupation=programer
+/users?occupation=programmer
 
 
 **header**
@@ -84,27 +84,50 @@ request from client to server,
 response from server to client
 
 **status (200, 404)**
+1xx/ informational
+2xx/ success
+3xx/ redirect
+4xx/ client side error
+5xx/ server side error
 
 200 - OK
 
 404 - NOT FOUND
+
+418 - Im a teapot (april fools joke, easter egg in google.com, 
+should be returned by teapots requested to brew coffee )
+
+451 - unavailable due to legal reasons
 
 others>
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
 **REST**
 
-
+Representational State Transfer (REST) web service is the underlying architectural principle of the web.
+A web page is a representation of a resource, URL tells the browser about the nouns used in the concept, 
+verbs are used based on polymorphism (1 verb can be used with a lot of nouns).
+For instance, when you go to a web page, the browser does an HTTP GET on the URL one would type in 
+and back comes a web page.
 
 **HTTP, HTTPS**
 
+HTTP> Hypertext Transfer Protocol, an application-layer protocol for transmitting hypermedia documents, such as HTML.
+
+HTTPS> Secured Hypertext Transfer Protocol, the use of an SSL certificate - "SSL" stands for secure sockets layer -
+which creates a secure encrypted connection between the web server and the web browser.
 
 **Examples:**
 
-Download pdf endpoint
+Download pdf endpoint _/done_
 
-GET/POST/PUT * endpoint call or implementation or refactor
+GET/POST/PUT * endpoint call or implementation or refactor _/done_
 
-Modify status of an endpoint
+Modify status of an endpoint / return custom HTTP Status from endpoint, can change if an endpoint is enabled, 
+if it is considered sensitive and even its id.
+application properties> 
+endpoints.bean.id=springbeans
+endpoints.name.sensitive=false
+endpoints.name.enabled=true 
 
-Add error handling to an endpoint
+Add error handling to an endpoint _/done_
